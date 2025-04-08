@@ -1,5 +1,3 @@
-#------------------ NLP Code Section: extract_requirements2.py -------------------#
-
 #Environment setup Scripts:
 #Step 1: check python version
 #        Using python3: python3 --version
@@ -27,8 +25,6 @@
 #       
 #        Check installed packages:
 #        pip list
-#Step 5: To run the python code
-#        Run: python3 extract_requirements2.py
 
 import spacy
 import re
@@ -339,15 +335,13 @@ if __name__ == "__main__":
     
     # Example system description
     system_description = """
-    A laundromat is a service business that allows people to bring their soiled laundry to the store, use the washing machines and the drying machines, and leave with clean clothes. The classical model is that customers visit the facility and check for availability. Payment is by coins or, in some recent models, by card. The customer requests work on the automation of services of the laundromat to allow its users to enjoy high flexibility and add to their time efficiency through scheduling, reservation, notifications, payment. You are asked to help automate the services offered by the laundromat.
-    The proposed automation will focus on the following operational aspects:
-    1. Washing and Drying Machine transformation: Each machine should be equipped with the necessary sensors to read its status (ON/OFF), amount of power consumed, locked/unlocked, etc.
-    2. Security: the facility should be under continuous monitoring using cameras. This should allow the owner to monitor the activities in the facility and the clients to check on the machines they are using.
-    3. Scheduling: A client should be able to book a specific machine (washer and or dryer) for a number of cycles (cannot exceed 2 consecutive cycles per machine).
-    4. Payment: Clients should be allowed two modes of payment: a. The classical coin based method, where each machine will be equipped with a payment interface. b. The online payment method using a credit/debit card when completing the booking. In both cases, payment must be made before the machine can be used.
-    5. A repository of information on machines (records of usage, maintenance, revenue, etc.), clients, and bills (water, electricity).
-    6. Communication: The facility should be covered by an uninterrupted internet service to allow continuous access to the services of the facility.
-    7. Feedback and Reviews: Clients should be able to provide feedback and reviews on the machines and on the facility. The administration will have the right to respond to reviews.
+A laundromat provides self-service washing and drying machines for customers. Customers can walk in and use available machines or reserve a machine in advance through an online booking system. Each washing machine and dryer has a unique identifier. Customers must select a machine, choose a wash or dry cycle, and make a payment before starting the machine. Payments can be made using coins, a prepaid card, or an online payment system.
+
+Once the machine is started, the system displays the remaining time for the cycle. Customers can check the status of their machine using a mobile app or a kiosk at the laundromat. If a machine finishes and the laundry is not removed within 10 minutes, the system sends a reminder notification to the customer. If the machine is still occupied after 30 minutes, staff may move the laundry to a designated area.
+
+The laundromat also offers a drop-off service where customers can leave their laundry with an attendant, who will wash, dry, and fold the clothes. The system tracks drop-off orders, assigns them to available attendants, and notifies customers when their laundry is ready for pickup.
+
+The laundromat system also maintains a maintenance log for each machine, automatically flagging machines that require servicing based on error reports or usage counts. Staff can update the status of machines and schedule repairs.
     """
     
     # Extract requirements
@@ -356,7 +350,3 @@ if __name__ == "__main__":
     # Print extracted requirements
     for i, req in enumerate(requirements, 1):
         print(f"{i}. {req}")
-
-
-#------------------ Model Checking Code Section -------------------#
-
